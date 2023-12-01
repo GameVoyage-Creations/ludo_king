@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* it will put the children to screen's center */
+  height: 100dvb;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  /* its jonas trick it's great to build responsve web i will tell you later for now  don't use px expept for little stuff  1 rem = 10 px  */
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+.contaner {
+  /* 90rem = 900px  */
+  width: 90rem;
+  height: 50rem;
+  background-color: #38d9a9;
+  align-self: center;
+}
