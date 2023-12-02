@@ -4,10 +4,126 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script type="defer" src="./generateSquares.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <!-- container for the game  -->
-    <div class="contaner"></div>
+    <!--The whole App container-->
+    <div class="app-container">
+      <!-- container for player 2 stats -->
+      <div class="player2-stats-container"></div>
+      <!-- container for the game  -->
+      <div class="game-container">
+        <!-- upper part of the game container  -->
+        <div class="upper-container">
+          <!-- left part of the upper container (big red square part in the game) -->
+          <div class="upper-left-container"></div>
+          <!-- middle part of the upper container (b/n the big red square and big green square in the game) -->
+          <div class="upper-middle-container square">
+            <!-- each squares that are found inside middle part of the upper container -->
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+            <div class="upper-middle-container-square"></div>
+          </div>
+          <!-- right part of the upper container (big green square part in the game) -->
+          <div class="upper-right-container square"></div>
+        </div>
+        <!-- middle part of the game container  -->
+        <div class="middle-container">
+          <!-- left part of the middlle container (b/n the big red square and big blue square in the game) -->
+          <div class="middle-left-container squares">
+            <!-- each squares that are found inside left part of the middle container -->
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+            <div class="middle-left-container-square"></div>
+          </div>
+          <!-- middle part of the middlle container (triangle part) -->
+          <div class="middle-middle-container squares"></div>
+          <!-- right part of the middlle container (b/n the big green square and big yellow square in the game) -->
+          <div class="middle-right-container squares">
+            <!-- each squares that are found inside right part of the middle container -->
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+            <div class="middle-right-container-square"></div>
+          </div>
+        </div>
+        <!-- lower part of the game container  -->
+        <div class="lower-container">
+          <!-- left part of the lower container (big blue square part in the game) -->
+          <div class="lower-left-container square"></div>
+          <!-- middle part of the lower container (b/n the big blue square and big yellow square in the game) -->
+          <div class="lower-middle-container square">
+            <!-- each squares that are found inside middle part of the lower container -->
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+            <div class="lower-middle-container-square"></div>
+          </div>
+          <!-- right part of the lower container (big yellow square part in the game) -->
+          <div class="lower-right-container square"></div>
+        </div>
+      </div>
+      <!-- container for player 1 stats -->
+      <div class="player1-stats-container"></div>
+    </div>
   </body>
 </html>
