@@ -46,6 +46,8 @@ html {
   height: 55.5rem;
   align-self: center;
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
 }
 .upper-container,
 .middle-container,
@@ -85,7 +87,177 @@ html {
 .middle-middle-container {
   border: none;
 }
+/* for only  */
+.upper-left-container {
+  background-color: #ef2424;
 
+  position: relative;
+}
+/* inner rectangle : creating inner rectangle and circles :  the reason why the width of the inner rectangle is 148px is the upper left corner is 222px by 222px then ,  the we subtract 37px which is the box  from top:buttom and top: right and finaly it  becames 148px  */
+.inner-rectangle-for-upper-left {
+  width: 14.8rem;
+  height: 14.8rem;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.circles-for-upper-left {
+  width: 5rem;
+  height: 5rem;
+  background-color: #ef2424;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle1-for-upper-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.circle2-for-upper-left {
+  top: 1rem;
+  right: 1rem;
+}
+
+.circle3-for-upper-left {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.circle4-for-upper-left {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.upper-right-container {
+  background-color: #2f9e44;
+  position: relative;
+}
+/* for upper right container : creating inner rectangle and circles : */
+.inner-rectangle-for-upper-right {
+  width: 14.8rem;
+  height: 14.8rem;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.circles-for-upper-right {
+  width: 5rem;
+  height: 5rem;
+  background-color: #2f9e44;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle1-for-upper-right {
+  top: 1rem;
+  left: 1rem;
+}
+
+.circle2-for-upper-right {
+  top: 1rem;
+  right: 1rem;
+}
+
+.circle3-for-upper-right {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.circle4-for-upper-right {
+  bottom: 1rem;
+  right: 1rem;
+}
+/* for the lower left : creating inner rectangle and circles : */
+.lower-left-container {
+  position: relative;
+  background-color: #095f6f;
+}
+.inner-rectangle-for-lower-left {
+  width: 14.8rem;
+  height: 14.8rem;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.circles-for-lower-left {
+  width: 5rem;
+  height: 5rem;
+  background-color: #095f6f;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle1-for-lower-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.circle2-for-lower-left {
+  top: 1rem;
+  right: 1rem;
+}
+
+.circle3-for-lower-left {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.circle4-for-lower-left {
+  bottom: 1rem;
+  right: 1rem;
+}
+/* for lower right:  creating inner rectangle and circles */
+.lower-right-container {
+  position: relative;
+  background-color: #ffbf00;
+}
+.inner-rectangle-for-lower-right {
+  width: 14.8rem;
+  height: 14.8rem;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.circles-for-lower-right {
+  width: 5rem;
+  height: 5rem;
+  background-color: #ffbf00;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle1-for-lower-right {
+  top: 1rem;
+  left: 1rem;
+}
+
+.circle2-for-lower-right {
+  top: 1rem;
+  right: 1rem;
+}
+
+.circle3-for-lower-right {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.circle4-for-lower-right {
+  bottom: 1rem;
+  right: 1rem;
+}
 .upper-middle-container,
 .lower-middle-container {
   display: grid;
