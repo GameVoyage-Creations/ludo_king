@@ -18,10 +18,123 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
 }
-.contaner {
-  /* 90rem = 900px  */
-  width: 90rem;
-  height: 50rem;
-  background-color: #38d9a9;
+
+/* i write the css according to the application's overview from top to bottom  so that the 1st part becomes the application container which contains all the app and the 2nd is player 2-status-container since it is at the top of all others*/
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.player2-stats-container {
+  background-color: lightblue;
+  width: 16.65rem;
+  height: 10rem;
+  align-self: flex-end;
+  margin-right: 3.7rem;
+}
+.game-container {
+  /* 90rem = 900px
+  Since the container is square the width and the height must 
+  be equal.And 55.5 rem is 550px which can be divide to 15 equal 
+  squares (each square has 3.7 rem width and height)
+
+  NB:-Each numbers are based on calculations they are not random
+  */
+  width: 55.5rem;
+  height: 55.5rem;
   align-self: center;
+  border: 1px solid black;
+}
+.upper-container,
+.middle-container,
+.lower-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+}
+.square {
+  /* when the border is setted to none, it is inorder
+  to prevernt border overlapping
+   */
+  height: 22.2rem;
+  border: 1px solid black;
+  border-right: none;
+  border-bottom: none;
+}
+.squares {
+  height: 11.1rem;
+  border: 1px solid black;
+  border-right: none;
+  border-bottom: none;
+}
+
+.player1-stats-container {
+  background-color: lightpink;
+  width: 16.65rem;
+  height: 10rem;
+  align-self: flex-start;
+  margin-left: 3.7rem;
+}
+
+/* Preventing border overlapping  */
+.upper-left-container,
+.upper-right-container,
+.lower-left-container,
+.lower-right-container,
+.middle-middle-container {
+  border: none;
+}
+
+.upper-middle-container,
+.lower-middle-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: none;
+  border-left: none;
+  border-right: 1px solid black;
+}
+
+.upper-middle-container-square,
+.lower-middle-container-square {
+  height: 3.7rem;
+  border: 1px solid black;
+  border-right: none;
+}
+.upper-middle-container-square {
+  border-top: none;
+}
+.lower-middle-container-square {
+  border-bottom: none;
+}
+
+.middle-left-container,
+.middle-right-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-left: none;
+  border-top: none;
+  border-bottom: 1px solid black;
+}
+
+.middle-left-container-square,
+.middle-right-container-square {
+  height: 3.7rem;
+  border: 1px solid black;
+  border-bottom: none;
+}
+
+.middle-left-container-square {
+  border-left: none;
+}
+.middle-right-container-square {
+  border-right: none;
+}
+
+/* Creating 4 triangles */
+.middle-middle-container {
+  border-bottom: 5.55rem solid rgb(0, 149, 255);
+  border-right: 5.55rem solid rgb(255, 230, 0);
+  border-top: 5.55rem solid rgb(30, 162, 4);
+  border-left: 5.55rem solid red;
 }
