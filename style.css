@@ -179,7 +179,7 @@ html {
 /* for the lower left : creating inner rectangle and circles : */
 .lower-left-container {
   position: relative;
-  background-color: #095f6f;
+  background-color: rgb(0, 200, 255);
 }
 .inner-rectangle-for-lower-left {
   width: 14.8rem;
@@ -194,7 +194,7 @@ html {
 .circles-for-lower-left {
   width: 4.5rem;
   height: 4.5rem;
-  background-color: #095f6f;
+  background-color: rgb(0, 200, 255);
   border-radius: 50%;
   position: absolute;
   margin: 0.5rem;
@@ -309,8 +309,17 @@ html {
 
 /* Creating 4 triangles */
 .middle-middle-container {
-  border-bottom: 5.55rem solid rgb(0, 149, 255);
+  border-bottom: 5.55rem solid rgb(0, 200, 255);
   border-right: 5.55rem solid rgb(255, 230, 0);
   border-top: 5.55rem solid rgb(30, 162, 4);
   border-left: 5.55rem solid red;
+}
+
+#sqr1,
+#sqr52,
+#sqr53,
+#sqr54,
+#sqr55,
+#sqr56 {
+  background-color: rgb(0, 200, 255);
 }
