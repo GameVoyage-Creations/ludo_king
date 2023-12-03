@@ -356,3 +356,36 @@ html {
 #sqr40 {
   border-bottom: 1px solid black;
 }
+
+#sqr51,
+#sqr12,
+#sqr25,
+#sqr38 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upward-arrow {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(0, 200, 255);
+}
+
+.right-arrow {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ef2424;
+}
+
+.downward-arrow {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(30, 162, 4);
+}
+
+.left-arrow {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(255, 225, 0);
+}
