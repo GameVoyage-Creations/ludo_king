@@ -29,11 +29,53 @@ html {
 }
 
 .player2-stats-container {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   width: 16.65rem;
   height: 10rem;
   align-self: flex-end;
   margin-right: 3.7rem;
+  /* for the token contaner and dice contaner */
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  align-items: center;
+  border-top-left-radius: 1rem;
+}
+
+.token-container-player-2 {
+  height: 8rem;
+
+  z-index: 3;
+  border: 4px rgb(255, 230, 0) solid;
+  border-left: none;
+  /* to change the color from right to left */
+  background: linear-gradient(to left, #2727ef, rgb(206, 248, 206));
+
+  /* border-radius: 1rem; */
+}
+
+.dice-image-container-player-2 {
+  height: 10rem;
+  border-radius: 1rem;
+  border: 4px rgb(255, 230, 0) solid;
+  border-right: none;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+.dice-image-container-inner-container-player-2 {
+  width: 92%;
+  height: 93%;
+  border-radius: 1rem;
+  border: px gray solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rgb(247, 206, 212);
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 6px rgb(206, 248, 206);
 }
 .game-container {
   /* 90rem = 900px
@@ -73,11 +115,53 @@ html {
 }
 
 .player1-stats-container {
-  background-color: lightpink;
+  /* background-color: lightpink; */
   width: 16.65rem;
   height: 10rem;
   align-self: flex-start;
   margin-left: 3.7rem;
+  /* **************** */
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  align-items: center;
+  border-top-left-radius: 1rem;
+}
+/*  *********/
+.token-container-player-1 {
+  height: 8rem;
+
+  z-index: 3;
+  border: 4px rgb(255, 230, 0) solid;
+  border-right: none;
+  /* to change the color from right to left */
+  background: linear-gradient(to right, #2727ef, rgb(206, 248, 206));
+
+  /* border-radius: 1rem; */
+}
+
+.dice-image-container-player-1 {
+  height: 10rem;
+  border-radius: 1rem;
+  border: 4px rgb(255, 230, 0) solid;
+  border-left: none;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+.dice-image-container-inner-container-player-1 {
+  width: 92%;
+  height: 93%;
+  border-radius: 1rem;
+  border: px gray solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: lightpink;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 6px rgb(180, 236, 180);
 }
 
 /* Preventing border overlapping  */
