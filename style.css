@@ -5,7 +5,7 @@ body {
   justify-content: center;
   /* it will put the children to screen's center */
   height: 100dvb;
-  background-image: url("./App-background.jpg");
+  background-image: url("./Images/App-background.jpg");
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -70,6 +70,9 @@ html {
   z-index: 2;
 }
 .dice-image-container-inner-container-player-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 92%;
   height: 93%;
   border-radius: 1rem;
@@ -157,6 +160,9 @@ html {
   z-index: 2;
 }
 .dice-image-container-inner-container-player-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 92%;
   height: 93%;
   border-radius: 1rem;
@@ -490,4 +496,12 @@ html {
   justify-content: center;
   padding: 0;
   font-size: 3.7rem;
+}
+
+.dice-image {
+  /* object-fit: cover; */
+  width: 6.2rem;
+  height: 6.2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.8);
 }
