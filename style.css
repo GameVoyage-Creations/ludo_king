@@ -43,7 +43,7 @@ html {
   NB:-Each numbers are based on calculations they are not random
   */
   width: 55.5rem;
-  height: 55.5rem;
+  height: 55.7rem;
   align-self: center;
   border: 1px solid black;
   display: flex;
@@ -87,6 +87,7 @@ html {
 .middle-middle-container {
   border: none;
 }
+
 /* for only  */
 .upper-left-container {
   background-color: #ef2424;
@@ -222,7 +223,7 @@ html {
 /* for lower right:  creating inner rectangle and circles */
 .lower-right-container {
   position: relative;
-  background-color: #ffbf00;
+  background-color: rgb(255, 230, 0);
 }
 .inner-rectangle-for-lower-right {
   width: 14.8rem;
@@ -237,7 +238,7 @@ html {
 .circles-for-lower-right {
   width: 4.5rem;
   height: 4.5rem;
-  background-color: #ffbf00;
+  background-color: rgb(255, 230, 0);
   border-radius: 50%;
   position: absolute;
   margin: 0.5rem;
@@ -298,6 +299,7 @@ html {
   height: 3.7rem;
   border: 1px solid black;
   border-bottom: none;
+  /* border-right: none; */
 }
 
 .middle-left-container-square {
@@ -340,4 +342,17 @@ html {
 #sqr65,
 #sqr66 {
   background-color: rgb(30, 162, 4);
+}
+
+#sqr40,
+#sqr67,
+#sqr68,
+#sqr69,
+#sqr70,
+#sqr71 {
+  background-color: rgb(255, 230, 0);
+}
+
+#sqr40 {
+  border-bottom: 1px solid black;
 }
