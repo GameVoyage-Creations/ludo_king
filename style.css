@@ -5,6 +5,11 @@ body {
   justify-content: center;
   /* it will put the children to screen's center */
   height: 100dvb;
+  background-image: url("./App-background.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 * {
   padding: 0;
@@ -91,6 +96,7 @@ html {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 .upper-container,
 .middle-container,
