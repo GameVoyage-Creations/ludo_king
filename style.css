@@ -312,7 +312,7 @@ html {
   border-bottom: 5.55rem solid rgb(0, 200, 255);
   border-right: 5.55rem solid rgb(255, 230, 0);
   border-top: 5.55rem solid rgb(30, 162, 4);
-  border-left: 5.55rem solid red;
+  border-left: 5.55rem solid #ef2424;
 }
 
 #sqr1,
@@ -322,4 +322,13 @@ html {
 #sqr55,
 #sqr56 {
   background-color: rgb(0, 200, 255);
+}
+
+#sqr14,
+#sqr57,
+#sqr58,
+#sqr59,
+#sqr60,
+#sqr61 {
+  background-color: #ef2424;
 }
