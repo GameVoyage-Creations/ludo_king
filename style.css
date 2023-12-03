@@ -105,11 +105,12 @@ html {
   z-index: 1;
 }
 .circles-for-upper-left {
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   background-color: #ef2424;
   border-radius: 50%;
   position: absolute;
+  margin: 0.5rem;
 }
 
 .circle1-for-upper-left {
@@ -148,11 +149,12 @@ html {
   z-index: 1;
 }
 .circles-for-upper-right {
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   background-color: #2f9e44;
   border-radius: 50%;
   position: absolute;
+  margin: 0.5rem;
 }
 
 .circle1-for-upper-right {
@@ -190,11 +192,12 @@ html {
   z-index: 1;
 }
 .circles-for-lower-left {
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   background-color: #095f6f;
   border-radius: 50%;
   position: absolute;
+  margin: 0.5rem;
 }
 
 .circle1-for-lower-left {
@@ -232,11 +235,12 @@ html {
   z-index: 1;
 }
 .circles-for-lower-right {
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   background-color: #ffbf00;
   border-radius: 50%;
   position: absolute;
+  margin: 0.5rem;
 }
 
 .circle1-for-lower-right {
