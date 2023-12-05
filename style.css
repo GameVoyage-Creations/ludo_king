@@ -45,6 +45,32 @@ html {
   align-items: center;
   border-top-left-radius: 0.75rem;
 }
+.upper-part {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  align-self: flex-end;
+}
+
+.lower-part {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  align-self: flex-start;
+}
+.arrow {
+  width: 3.7rem;
+  height: 3.7rem;
+}
+
+.right-arrow-container {
+  text-align: end;
+  margin-right: 1rem;
+}
+.left-arrow-container {
+  text-align: start;
+  margin-left: 1rem;
+}
 
 .token-container-player-2 {
   height: 6rem;
