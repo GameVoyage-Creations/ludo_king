@@ -13,6 +13,9 @@ function init() {
   document
     .querySelector(`.dice-player-${activePlayer}`)
     .classList.remove("hidden");
+  document
+    .querySelector(`.arrow-player-${activePlayer}`)
+    .classList.remove("hidden");
   animateArrow(activePlayer);
   changeOpacity(activePlayer, playerZeroColor);
 }
@@ -68,6 +71,9 @@ function switchPlayer() {
   document
     .querySelector(`.dice-player-${activePlayer}`)
     .classList.add("hidden");
+  document
+    .querySelector(`.arrow-player-${activePlayer}`)
+    .classList.add("hidden");
   activePlayer = activePlayer === 0 ? 1 : 0;
   animateArrow(activePlayer);
 
@@ -75,6 +81,9 @@ function switchPlayer() {
   else changeOpacity(activePlayer, ["#00c8ff", "#4dd9ff"]);
   document
     .querySelector(`.dice-player-${activePlayer}`)
+    .classList.remove("hidden");
+  document
+    .querySelector(`.arrow-player-${activePlayer}`)
     .classList.remove("hidden");
 }
 // creating buttons for both buttons
