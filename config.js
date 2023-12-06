@@ -68,7 +68,6 @@ const randomDice = function () {
 function switchPlayer() {
   clearInterval(changeBgId);
   clearInterval(animateArrowId);
-  document;
 
   document
     .querySelector(`.arrow-player-${activePlayer}`)
@@ -89,42 +88,53 @@ function switchPlayer() {
 
 btnEl0.addEventListener("click", function () {
   if (activePlayer === 1) return;
-  btnEl1.src = `./Images/Dice-images/dice-${6}.png`;
 
+  document
+    .querySelector(`.arrow-player-${activePlayer}`)
+    .classList.add("hidden");
   // generating random dice
   const dice = randomDice();
 
   // cheaking if the dice less that 6
-  if (dice < 6) {
-    btnEl0.src = `./Images/Dice-images/dice-${dice}.png`;
-    setTimeout(function () {
-      setTimeDice(activePlayer === 0 ? 1 : 0);
-    }, 1000);
 
-    switchPlayer();
-  } else {
-    // displying the dice
+  btnEl0.classList.add("shake");
+  setTimeout(() => {
+    btnEl0.classList.remove("shake");
     btnEl0.src = `./Images/Dice-images/dice-${dice}.png`;
-  }
+    dice < 6
+      ? setTimeout(() => {
+          switchPlayer();
+          setTimeDice(0);
+        }, 1000)
+      : document
+          .querySelector(`.arrow-player-${activePlayer}`)
+          .classList.remove("hidden");
+  }, 1000);
 });
+
 btnEl1.addEventListener("click", function () {
   if (activePlayer === 0) return;
-  btnEl0.src = `./Images/Dice-images/dice-${6}.png`;
+
   // generating random dice
+  document
+    .querySelector(`.arrow-player-${activePlayer}`)
+    .classList.add("hidden");
   const dice = randomDice();
-
   // cheaking if the dice less that 6
-  if (dice < 6) {
-    btnEl1.src = `./Images/Dice-images/dice-${dice}.png`;
-    setTimeout(function () {
-      setTimeDice(activePlayer === 0 ? 1 : 0);
-    }, 500);
 
-    switchPlayer();
-  } else {
-    // displying the dice
+  btnEl1.classList.add("shake");
+  setTimeout(() => {
+    btnEl1.classList.remove("shake");
     btnEl1.src = `./Images/Dice-images/dice-${dice}.png`;
-  }
+    dice < 6
+      ? setTimeout(() => {
+          switchPlayer();
+          setTimeDice(1);
+        }, 1000)
+      : document
+          .querySelector(`.arrow-player-${activePlayer}`)
+          .classList.remove("hidden");
+  }, 1000);
 });
 
 function setTimeDice(activePlayer) {

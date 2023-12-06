@@ -560,3 +560,19 @@ html {
   bottom: 1.5rem;
   /* left: 0.3rem; */
 }
+
+.shake {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(400deg);
+  }
+  50% {
+    transform: rotate(-400deg);
+  }
+  100% {
+    transform: rotate(400deg);
+  }
+}
