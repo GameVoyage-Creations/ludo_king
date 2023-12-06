@@ -117,7 +117,7 @@ btnEl1.addEventListener("click", function () {
   if (dice < 6) {
     btnEl1.src = `./Images/Dice-images/dice-${dice}.png`;
     setTimeout(function () {
-      BacktoOrigin(activePlayer === 0 ? 1 : 0);
+      setTimeDice(activePlayer === 0 ? 1 : 0);
     }, 500);
 
     switchPlayer();
@@ -128,7 +128,6 @@ btnEl1.addEventListener("click", function () {
 });
 
 function setTimeDice(activePlayer) {
-  console.log(activePlayer);
   document
     .querySelector(`.dice-player-${activePlayer}`)
     .classList.add("hidden");
