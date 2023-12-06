@@ -4,6 +4,8 @@ const btnEl1 = document.querySelector(".dice-player-1");
 let activePlayer;
 let changeBgId;
 let animateArrowId;
+const playerZeroColor = ["#00c8ff", "#4dd9ff"];
+const playerOneColor = ["#2f9e44", "#59b169"];
 
 function init() {
   activePlayer = 0;
@@ -12,7 +14,7 @@ function init() {
     .querySelector(`.dice-player-${activePlayer}`)
     .classList.remove("hidden");
   animateArrow(activePlayer);
-  changeOpacity(activePlayer, ["#00c8ff", "#4dd9ff"]);
+  changeOpacity(activePlayer, playerZeroColor);
 }
 
 const animateArrow = function (activePlayer) {
@@ -51,6 +53,7 @@ const changeOpacity = function (activePlayer, colors) {
   changeBgId = setInterval(changeBackgorundColor, 300);
 };
 
+// initializaing the game
 init();
 
 // creating functiion that generate rondom number
@@ -68,7 +71,7 @@ function switchPlayer() {
   activePlayer = activePlayer === 0 ? 1 : 0;
   animateArrow(activePlayer);
 
-  if (activePlayer === 1) changeOpacity(activePlayer, ["#2f9e44", "#59b169"]);
+  if (activePlayer === 1) changeOpacity(activePlayer, playerOneColor);
   else changeOpacity(activePlayer, ["#00c8ff", "#4dd9ff"]);
   document
     .querySelector(`.dice-player-${activePlayer}`)
@@ -79,6 +82,7 @@ function switchPlayer() {
 btnEl0.addEventListener("click", function () {
   // generating random dice
   const dice = rondomDice();
+
   // cheaking if the dice less that 6
   if (dice < 6) switchPlayer();
   else {
@@ -89,7 +93,7 @@ btnEl0.addEventListener("click", function () {
 btnEl1.addEventListener("click", function () {
   // generating random dice
   const dice = rondomDice();
-  console.log(dice);
+
   // cheaking if the dice less that 6
   if (dice < 6) switchPlayer();
   else {
