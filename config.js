@@ -2,14 +2,57 @@
 const btnEl0 = document.querySelector(".dice-player-0");
 const btnEl1 = document.querySelector(".dice-player-1");
 let activePlayer;
+let changeBgId;
+let animateArrowId;
+
 function init() {
   activePlayer = 0;
 
   document
     .querySelector(`.dice-player-${activePlayer}`)
     .classList.remove("hidden");
+  animateArrow(activePlayer);
+  changeOpacity(activePlayer, ["#00c8ff", "#4dd9ff"]);
 }
+
+const animateArrow = function (activePlayer) {
+  let transitionImage = document.querySelector(`.arrow-player-${activePlayer}`);
+  let translateXValue = 0;
+  let moveToLeft = true;
+  function slideImage() {
+    if (moveToLeft) {
+      // Move the image to the left by 50 pixels
+      translateXValue -= 8;
+    } else {
+      // Move the image back to the original position
+      translateXValue = 0;
+    }
+
+    // Apply the translation using the transform property
+    transitionImage.style.transform = "translateX(" + translateXValue + "px)";
+
+    // Toggle the direction for the next iteration
+    moveToLeft = !moveToLeft;
+  }
+
+  // Call the function every second (1000 milliseconds)
+  animateArrowId = setInterval(slideImage, 300);
+};
+
+const changeOpacity = function (activePlayer, colors) {
+  let currentIndex = 0;
+  function changeBackgorundColor() {
+    let currentColor = colors[currentIndex];
+    currentIndex = (currentIndex + 1) % colors.length;
+    document.querySelector(
+      `.upper-right-${activePlayer}`
+    ).style.backgroundColor = currentColor;
+  }
+  changeBgId = setInterval(changeBackgorundColor, 300);
+};
+
 init();
+
 // creating functiion that generate rondom number
 const rondomDice = function () {
   return Math.floor(Math.random() * 6 + 1);
