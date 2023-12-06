@@ -60,7 +60,7 @@ const changeOpacity = function (activePlayer, colors) {
 init();
 
 // creating functiion that generate rondom number
-const rondomDice = function () {
+const randomDice = function () {
   return Math.floor(Math.random() * 6 + 1);
 };
 
@@ -68,9 +68,8 @@ const rondomDice = function () {
 function switchPlayer() {
   clearInterval(changeBgId);
   clearInterval(animateArrowId);
-  document
-    .querySelector(`.dice-player-${activePlayer}`)
-    .classList.add("hidden");
+  document;
+
   document
     .querySelector(`.arrow-player-${activePlayer}`)
     .classList.add("hidden");
@@ -89,23 +88,33 @@ function switchPlayer() {
 // creating buttons for both buttons
 
 btnEl0.addEventListener("click", function () {
+  if (activePlayer === 1) return;
+  btnEl1.src = `./Images/Dice-images/dice-${6}.png`;
+
   // generating random dice
-  const dice = rondomDice();
+  const dice = randomDice();
 
   // cheaking if the dice less that 6
-  if (dice < 6) switchPlayer();
-  else {
+  if (dice < 6) {
+    btnEl0.src = `./Images/Dice-images/dice-${dice}.png`;
+    switchPlayer();
+  } else {
     // displying the dice
     btnEl0.src = `./Images/Dice-images/dice-${dice}.png`;
   }
 });
 btnEl1.addEventListener("click", function () {
+  if (activePlayer === 0) return;
+  btnEl0.src = `./Images/Dice-images/dice-${6}.png`;
   // generating random dice
-  const dice = rondomDice();
+  const dice = randomDice();
 
   // cheaking if the dice less that 6
-  if (dice < 6) switchPlayer();
-  else {
+  if (dice < 6) {
+    btnEl1.src = `./Images/Dice-images/dice-${dice}.png`;
+
+    switchPlayer();
+  } else {
     // displying the dice
     btnEl1.src = `./Images/Dice-images/dice-${dice}.png`;
   }
