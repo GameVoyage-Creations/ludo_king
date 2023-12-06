@@ -18,7 +18,7 @@
       <div class="upper-part">
         <div class="right-arrow-container">
           <img
-            class="arrow"
+            class="arrow arrow-player-1"
             src="./Images/Arrows/right-arrow.png"
             alt="Right arrow"
           />
@@ -27,7 +27,14 @@
           <!-- containers for the game token and dice -->
 
           <div class="dice-image-container-player-2">
-            <div class="dice-image-container-inner-container-player-2"></div>
+            <div class="dice-image-container-inner-container-player-2">
+              <img
+                role="button"
+                class="dice-image dice-player-1 hidden"
+                src="./Images/Dice-images/dice-6.png"
+                alt="image of a dice"
+              />
+            </div>
           </div>
           <div class="token-container-player-2"></div>
         </div>
@@ -87,7 +94,7 @@
             <div id="sqr31" class="upper-middle-container-square"></div>
           </div>
           <!-- right part of the upper container (big green square part in the game) -->
-          <div class="upper-right-container square">
+          <div class="upper-right-container upper-right-1 square">
             <div class="inner-rectangle-for-upper-right">
               <div
                 class="circles-for-upper-right circle1-for-upper-right"
@@ -192,7 +199,7 @@
         <!-- lower part of the game container  -->
         <div class="lower-container">
           <!-- left part of the lower container (big blue square part in the game) -->
-          <div class="lower-left-container square">
+          <div class="lower-left-container square upper-right-0">
             <div class="inner-rectangle-for-lower-left">
               <div class="circles-for-lower-left circle1-for-lower-left"></div>
               <div class="circles-for-lower-left circle2-for-lower-left"></div>
@@ -266,7 +273,8 @@
           <div class="dice-image-container-player-1">
             <div class="dice-image-container-inner-container-player-1">
               <img
-                class="dice-image"
+                role="button"
+                class="dice-image dice-player-0 hidden"
                 src="./Images/Dice-images/dice-6.png"
                 alt="image of a dice"
               />
@@ -275,12 +283,13 @@
         </div>
         <div class="left-arrow-container">
           <img
-            class="arrow"
+            class="arrow arrow-player-0"
             src="./Images/Arrows/left-arrow.png"
             alt="Right arrow"
           />
         </div>
       </div>
     </div>
+    <script src="config.js"></script>
   </body>
 </html>
