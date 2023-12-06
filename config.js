@@ -97,6 +97,10 @@ btnEl0.addEventListener("click", function () {
   // cheaking if the dice less that 6
   if (dice < 6) {
     btnEl0.src = `./Images/Dice-images/dice-${dice}.png`;
+    setTimeout(function () {
+      setTimeDice(activePlayer === 0 ? 1 : 0);
+    }, 1000);
+
     switchPlayer();
   } else {
     // displying the dice
@@ -112,6 +116,9 @@ btnEl1.addEventListener("click", function () {
   // cheaking if the dice less that 6
   if (dice < 6) {
     btnEl1.src = `./Images/Dice-images/dice-${dice}.png`;
+    setTimeout(function () {
+      BacktoOrigin(activePlayer === 0 ? 1 : 0);
+    }, 500);
 
     switchPlayer();
   } else {
@@ -119,3 +126,10 @@ btnEl1.addEventListener("click", function () {
     btnEl1.src = `./Images/Dice-images/dice-${dice}.png`;
   }
 });
+
+function setTimeDice(activePlayer) {
+  console.log(activePlayer);
+  document
+    .querySelector(`.dice-player-${activePlayer}`)
+    .classList.add("hidden");
+}
