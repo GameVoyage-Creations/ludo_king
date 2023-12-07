@@ -1,4 +1,3 @@
-// selecting elements
 const btnEl0 = document.querySelector(".dice-player-0");
 const btnEl1 = document.querySelector(".dice-player-1");
 let activePlayer;
@@ -7,31 +6,20 @@ let animateArrowId;
 const playerZeroColor = ["rgb(0, 200, 255)", "rgb(2, 112, 167)"];
 const playerOneColor = ["rgb(30, 162, 4)", "rgb(20, 108, 2)"];
 
-function init() {
-  activePlayer = 0;
-  animateArrow(activePlayer);
-  changeOpacity(activePlayer, playerZeroColor);
-}
-
 const animateArrow = function (activePlayer) {
   let transitionImage = document.querySelector(`.arrow-player-${activePlayer}`);
   let translateXValue = 0;
-  let moveToLeft = true;
+  let move = true;
   function slideImage() {
-    if (moveToLeft) {
-      // Move the image to the left by 50 pixels
-      activePlayer == 0 ? (translateXValue -= 20) : (translateXValue += 20);
-    } else {
-      // Move the image back to the original position
-      translateXValue = 0;
-    }
-    // Apply the translation using the transform property
-    transitionImage.style.transform = "translateX(" + translateXValue + "px)";
-    // Toggle the direction for the next iteration
-    moveToLeft = !moveToLeft;
-  }
+    move
+      ? activePlayer == 0
+        ? (translateXValue -= 20)
+        : (translateXValue += 20)
+      : (translateXValue = 0);
 
-  // Call the function every second (1000 milliseconds)
+    transitionImage.style.transform = "translateX(" + translateXValue + "px)";
+    move = !move;
+  }
   animateArrowId = setInterval(slideImage, 250);
 };
 
@@ -47,92 +35,78 @@ const changeOpacity = function (activePlayer, colors) {
   changeBgId = setInterval(changeBackgorundColor, 250);
 };
 
-// initializaing the game
-init();
+const randomDice = () => Math.floor(Math.random() * 6 + 1);
 
-// creating functiion that generate rondom number
-const randomDice = function () {
-  return Math.floor(Math.random() * 6 + 1);
+const removeArrowImage = (activePlayer) =>
+  document
+    .querySelector(`.arrow-player-${activePlayer}`)
+    .classList.add("hidden");
+const addArrowImage = (activePlayer) =>
+  document
+    .querySelector(`.arrow-player-${activePlayer}`)
+    .classList.remove("hidden");
+const removeDiceImage = (activePlayer) =>
+  document
+    .querySelector(`.dice-player-${activePlayer}`)
+    .classList.add("hidden");
+const addDiceImage = (activePlayer) =>
+  document
+    .querySelector(`.dice-player-${activePlayer}`)
+    .classList.remove("hidden");
+
+const resetArrowAndColor = function () {
+  document.querySelector(`.arrow-player-0`).style.transform = "translateX(0)"; //resetting the positions of left arrow before switching
+  document.querySelector(`.arrow-player-1`).style.transform = "translateX(0)"; //resetting the positions of right arrow before switching
+
+  const prevPlayerColor =
+    activePlayer === 0 ? playerZeroColor[0] : playerOneColor[0];
+  document.querySelector(`.upper-right-${activePlayer}`).style.backgroundColor =
+    prevPlayerColor;
 };
 
-// creating switchPlayer function
-function switchPlayer() {
+const switchPlayer = function () {
   clearInterval(changeBgId);
   clearInterval(animateArrowId);
 
-  document.querySelector(`.arrow-player-0`).style.transform = "translateX(0)";
-  document.querySelector(`.arrow-player-1`).style.transform = "translateX(0)";
+  resetArrowAndColor();
 
-  document
-    .querySelector(`.arrow-player-${activePlayer}`)
-    .classList.add("hidden");
   activePlayer = activePlayer === 0 ? 1 : 0;
   animateArrow(activePlayer);
 
-  if (activePlayer === 1) changeOpacity(activePlayer, playerOneColor);
-  else changeOpacity(activePlayer, ["rgb(0, 200, 255)", "rgb(2, 112, 167)"]);
-  document
-    .querySelector(`.dice-player-${activePlayer}`)
-    .classList.remove("hidden");
-  document
-    .querySelector(`.arrow-player-${activePlayer}`)
-    .classList.remove("hidden");
-}
-// creating buttons for both buttons
+  activePlayer == 0
+    ? changeOpacity(activePlayer, playerZeroColor)
+    : changeOpacity(activePlayer, playerOneColor);
+  addDiceImage(activePlayer);
+  addArrowImage(activePlayer);
+};
 
-btnEl0.addEventListener("click", function () {
-  if (activePlayer === 1) return;
+const handleClickImages = function (activePlayer) {
+  const btn = activePlayer === 0 ? btnEl0 : btnEl1;
 
-  document
-    .querySelector(`.arrow-player-${activePlayer}`)
-    .classList.add("hidden");
-  // generating random dice
+  removeArrowImage(activePlayer);
   const dice = randomDice();
 
-  // cheaking if the dice less that 6
-
-  btnEl0.classList.add("shake");
+  btn.classList.add("shake");
   setTimeout(() => {
-    btnEl0.classList.remove("shake");
-    btnEl0.src = `./Images/Dice-images/dice-${dice}.png`;
+    btn.classList.remove("shake");
+    btn.src = `./Images/Dice-images/dice-${dice}.png`;
     dice < 6
       ? setTimeout(() => {
           switchPlayer();
-          setTimeDice(0);
+          removeDiceImage(activePlayer);
         }, 1000)
-      : document
-          .querySelector(`.arrow-player-${activePlayer}`)
-          .classList.remove("hidden");
+      : addArrowImage(activePlayer);
   }, 1000);
-});
+};
 
-btnEl1.addEventListener("click", function () {
-  if (activePlayer === 0) return;
+btnEl0.addEventListener("click", () => handleClickImages(0));
 
-  // generating random dice
-  document
-    .querySelector(`.arrow-player-${activePlayer}`)
-    .classList.add("hidden");
-  const dice = randomDice();
-  // cheaking if the dice less that 6
+btnEl1.addEventListener("click", () => handleClickImages(1));
 
-  btnEl1.classList.add("shake");
-  setTimeout(() => {
-    btnEl1.classList.remove("shake");
-    btnEl1.src = `./Images/Dice-images/dice-${dice}.png`;
-    dice < 6
-      ? setTimeout(() => {
-          switchPlayer();
-          setTimeDice(1);
-        }, 1000)
-      : document
-          .querySelector(`.arrow-player-${activePlayer}`)
-          .classList.remove("hidden");
-  }, 1000);
-});
-
-function setTimeDice(activePlayer) {
-  document
-    .querySelector(`.dice-player-${activePlayer}`)
-    .classList.add("hidden");
+function init() {
+  activePlayer = 0;
+  animateArrow(activePlayer);
+  changeOpacity(activePlayer, playerZeroColor);
 }
+
+init();
