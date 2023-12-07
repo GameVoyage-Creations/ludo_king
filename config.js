@@ -20,21 +20,19 @@ const animateArrow = function (activePlayer) {
   function slideImage() {
     if (moveToLeft) {
       // Move the image to the left by 50 pixels
-      translateXValue -= 8;
+      activePlayer == 0 ? (translateXValue -= 20) : (translateXValue += 20);
     } else {
       // Move the image back to the original position
       translateXValue = 0;
     }
-
     // Apply the translation using the transform property
     transitionImage.style.transform = "translateX(" + translateXValue + "px)";
-
     // Toggle the direction for the next iteration
     moveToLeft = !moveToLeft;
   }
 
   // Call the function every second (1000 milliseconds)
-  animateArrowId = setInterval(slideImage, 300);
+  animateArrowId = setInterval(slideImage, 250);
 };
 
 const changeOpacity = function (activePlayer, colors) {
@@ -61,6 +59,9 @@ const randomDice = function () {
 function switchPlayer() {
   clearInterval(changeBgId);
   clearInterval(animateArrowId);
+
+  document.querySelector(`.arrow-player-0`).style.transform = "translateX(0)";
+  document.querySelector(`.arrow-player-1`).style.transform = "translateX(0)";
 
   document
     .querySelector(`.arrow-player-${activePlayer}`)

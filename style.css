@@ -66,11 +66,11 @@ html {
 
 .right-arrow-container {
   text-align: end;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 .left-arrow-container {
   text-align: start;
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .token-container-player-2 {
@@ -580,4 +580,9 @@ html {
 .upper-right-0,
 .upper-right-1 {
   transition: background-color 0.5s ease;
+}
+
+.arrow-player-0,
+.arrow-player-1 {
+  transition: transform 0.5s ease;
 }
