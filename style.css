@@ -80,7 +80,7 @@ html {
   border: 4px rgb(255, 230, 0) solid;
   border-left: none;
   /* to change the color from right to left */
-  background: linear-gradient(to left, #0447c2, rgb(206, 248, 206));
+  background: linear-gradient(to left, white, rgb(215, 248, 206));
 
   /* border-radius: 1rem; */
 }
@@ -169,7 +169,7 @@ html {
   border: 4px rgb(255, 230, 0) solid;
   border-right: none;
   /* to change the color from right to left */
-  background: linear-gradient(to right, #0447c2, rgb(206, 248, 206));
+  background: linear-gradient(to right, white, rgb(206, 248, 206));
 
   /* border-radius: 1rem; */
 }
@@ -585,4 +585,17 @@ html {
 .arrow-player-0,
 .arrow-player-1 {
   transition: transform 0.5s ease;
+}
+
+.token-container-player-1,
+.token-container-player-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blue-token-image-container,
+.green-token-image-container {
+  position: relative;
+  top: 0.2rem;
 }
