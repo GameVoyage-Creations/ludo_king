@@ -576,3 +576,8 @@ html {
     transform: rotate(400deg);
   }
 }
+
+.upper-right-0,
+.upper-right-1 {
+  transition: background-color 0.5s ease;
+}

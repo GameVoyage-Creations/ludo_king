@@ -4,18 +4,11 @@ const btnEl1 = document.querySelector(".dice-player-1");
 let activePlayer;
 let changeBgId;
 let animateArrowId;
-const playerZeroColor = ["#00c8ff", "#4dd9ff"];
-const playerOneColor = ["#2f9e44", "#59b169"];
+const playerZeroColor = ["rgb(0, 200, 255)", "rgb(2, 112, 167)"];
+const playerOneColor = ["rgb(30, 162, 4)", "rgb(20, 108, 2)"];
 
 function init() {
   activePlayer = 0;
-
-  document
-    .querySelector(`.dice-player-${activePlayer}`)
-    .classList.remove("hidden");
-  document
-    .querySelector(`.arrow-player-${activePlayer}`)
-    .classList.remove("hidden");
   animateArrow(activePlayer);
   changeOpacity(activePlayer, playerZeroColor);
 }
@@ -53,7 +46,7 @@ const changeOpacity = function (activePlayer, colors) {
       `.upper-right-${activePlayer}`
     ).style.backgroundColor = currentColor;
   }
-  changeBgId = setInterval(changeBackgorundColor, 300);
+  changeBgId = setInterval(changeBackgorundColor, 250);
 };
 
 // initializaing the game
@@ -76,7 +69,7 @@ function switchPlayer() {
   animateArrow(activePlayer);
 
   if (activePlayer === 1) changeOpacity(activePlayer, playerOneColor);
-  else changeOpacity(activePlayer, ["#00c8ff", "#4dd9ff"]);
+  else changeOpacity(activePlayer, ["rgb(0, 200, 255)", "rgb(2, 112, 167)"]);
   document
     .querySelector(`.dice-player-${activePlayer}`)
     .classList.remove("hidden");
