@@ -537,6 +537,7 @@ html {
   height: 4.65rem;
   border-radius: 1.5rem;
   box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 /* star */
 .star {
@@ -558,6 +559,7 @@ html {
   height: 3.7rem;
   position: relative;
   bottom: 1.5rem;
+  cursor: pointer;
   /* left: 0.3rem; */
 }
 
@@ -598,4 +600,9 @@ html {
 .green-token-image-container {
   position: relative;
   top: 0.2rem;
+}
+#sqr1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

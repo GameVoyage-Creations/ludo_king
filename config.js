@@ -1,5 +1,16 @@
 const btnEl0 = document.querySelector(".dice-player-0");
 const btnEl1 = document.querySelector(".dice-player-1");
+const lowerLeftContainer = document.querySelector(
+  ".inner-rectangle-for-lower-left"
+);
+const upperRightContainer = document.querySelector(
+  ".inner-rectangle-for-upper-right"
+);
+let tokensInLOwerLeftContainer =
+  lowerLeftContainer.querySelectorAll(".blue-token-image").length;
+let TokensInUpperRightContainer =
+  upperRightContainer.querySelectorAll(".green-token-image").length;
+
 let activePlayer;
 let changeBgId;
 let animateArrowId;
@@ -36,6 +47,8 @@ const changeOpacity = function (activePlayer, colors) {
 };
 
 const randomDice = () => Math.floor(Math.random() * 6 + 1);
+
+// const randomDice = () => Math.floor(Math.random() * (6 - 5 + 1)) + 5; //for testing purpose
 
 const removeArrowImage = (activePlayer) =>
   document
@@ -90,18 +103,146 @@ const handleClickImages = function (activePlayer) {
   setTimeout(() => {
     btn.classList.remove("shake");
     btn.src = `./Images/Dice-images/dice-${dice}.png`;
-    dice < 6
-      ? setTimeout(() => {
+    if (dice < 6) {
+      setTimeout(() => {
+        if (
+          activePlayer === 0
+            ? tokensInLOwerLeftContainer
+            : TokensInUpperRightContainer === 4
+        ) {
           switchPlayer();
           removeDiceImage(activePlayer);
-        }, 1000)
-      : addArrowImage(activePlayer);
+        }
+
+        if (
+          activePlayer === 0
+            ? tokensInLOwerLeftContainer
+            : TokensInUpperRightContainer != 4
+        ) {
+          moveDice(dice, activePlayer);
+        }
+      }, 1000);
+    }
+    if (dice === 6) {
+      addArrowImage(activePlayer);
+      appStart(dice, activePlayer);
+    }
   }, 1000);
 };
 
 btnEl0.addEventListener("click", () => handleClickImages(0));
 
 btnEl1.addEventListener("click", () => handleClickImages(1));
+
+const appStart = function (dice, activePlayer) {
+  const blue1 = document.querySelector(".blue-1");
+  const blue2 = document.querySelector(".blue-2");
+  const blue3 = document.querySelector(".blue-3");
+  const blue4 = document.querySelector(".blue-4");
+  const blueTokens = [blue1, blue2, blue3, blue4];
+  const square = document.getElementById("sqr1");
+
+  const green1 = document.querySelector(".green-1");
+  const green2 = document.querySelector(".green-2");
+  const green3 = document.querySelector(".green-3");
+  const green4 = document.querySelector(".green-4");
+  const greenTokens = [green1, green2, green3, green4];
+  const square2 = document.getElementById("sqr27");
+
+  if (activePlayer === 0) {
+    if (dice === 6) {
+      blueTokens.forEach((blueToken) => {
+        blueToken.addEventListener("click", function () {
+          blueToken.parentNode.removeChild(blueToken);
+          square.appendChild(blueToken);
+          tokensInLOwerLeftContainer =
+            lowerLeftContainer.querySelectorAll(".blue-token-image").length;
+          const tokensInSquare =
+            square.querySelectorAll(".blue-token-image").length;
+          blueTokens.forEach((blueToken) => {
+            if (square.contains(blueToken)) {
+              blueToken.style.width = `${2.3 / tokensInSquare}rem`;
+              if (tokensInSquare > 1) blueToken.style.height = `2rem`;
+            }
+          });
+        });
+      });
+    }
+  }
+
+  if (activePlayer === 1) {
+    if (dice === 6) {
+      greenTokens.forEach((greenToken) => {
+        greenToken.addEventListener("click", function () {
+          greenToken.parentNode.removeChild(greenToken);
+          square2.appendChild(greenToken);
+          TokensInUpperRightContainer =
+            upperRightContainer.querySelectorAll(".green-token-image").length;
+          const tokensInSquare =
+            square2.querySelectorAll(".green-token-image").length;
+          greenTokens.forEach((greenToken) => {
+            if (square2.contains(greenToken)) {
+              greenToken.style.width = `${2.3 / tokensInSquare}rem`;
+              if (tokensInSquare > 1) greenToken.style.height = `2rem`;
+            }
+          });
+        });
+      });
+    }
+  }
+};
+
+function moveDice(dice, activePlayer) {
+  const blue1 = document.querySelector(".blue-1");
+  const blue2 = document.querySelector(".blue-2");
+  const blue3 = document.querySelector(".blue-3");
+  const blue4 = document.querySelector(".blue-4");
+  const blueTokens = [blue1, blue2, blue3, blue4];
+  const square = document.getElementById("sqr1");
+
+  const green1 = document.querySelector(".green-1");
+  const green2 = document.querySelector(".green-2");
+  const green3 = document.querySelector(".green-3");
+  const green4 = document.querySelector(".green-4");
+  const greenTokens = [green1, green2, green3, green4];
+  const square2 = document.getElementById("sqr27");
+
+  if (activePlayer === 0) {
+    if (dice < 6) {
+      blueTokens.forEach((blueToken) => {
+        blueToken.addEventListener("click", function () {
+          if (square.contains(blueToken)) {
+            blueToken.style.width = "2.3rem";
+            blueToken.style.height = "3.7rem";
+            const newSquare = document.getElementById(`sqr${1 + dice}`);
+            blueToken.parentNode.removeChild(blueToken);
+            newSquare.appendChild(blueToken);
+            removeDiceImage(activePlayer);
+          }
+          switchPlayer();
+        });
+      });
+    }
+  }
+
+  if (activePlayer === 1) {
+    if (dice < 6) {
+      greenTokens.forEach((greenToken) => {
+        greenToken.addEventListener("click", function () {
+          if (square2.contains(greenToken)) {
+            greenToken.style.width = "2.3rem";
+            greenToken.style.height = "3.7rem";
+            const newSquare = document.getElementById(`sqr${27 + dice}`);
+            greenToken.parentNode.removeChild(greenToken);
+            newSquare.appendChild(greenToken);
+            removeDiceImage(activePlayer);
+          }
+          switchPlayer();
+        });
+      });
+    }
+  }
+}
 
 function init() {
   activePlayer = 0;
